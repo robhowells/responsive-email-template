@@ -33,5 +33,7 @@
 - Yahoo - full
 
 *Need to add support for retina images
+
 **Known bug with columns
+
 ***Need to add support for full width columns
