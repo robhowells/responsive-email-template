@@ -1,236 +1,360 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Responsive email template</title>
-	<style type="text/css">  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--[if !mso]><!-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--<![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style type="text/css">
+        /* Basics */
+        body {
+            margin: 0 !important;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        table {
+            border-spacing: 0;
+            font-family: sans-serif;
+            color: #333333;
+        }
+        td {
+            padding: 0;
+        }
+        img {
+            border: 0;
+        }
+        div[style*="margin: 16px 0"] { 
+            margin:0 !important;
+        }
+        .wrapper {
+            width: 100%;
+            table-layout: fixed;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        .webkit {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .outer {
+            Margin: 0 auto;
+            width: 100%;
+            max-width: 600px;
+        }
+        .full-width-image img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+        }
+        .inner {
+            padding: 10px;
+        }
+        p {
+            Margin: 0;
+        }
+        a {
+            color: #ee6a56;
+            text-decoration: underline;
+        }
+        .h1 {
+            font-size: 21px;
+            font-weight: bold;
+            Margin-bottom: 18px;
+        }
+        .h2 {
+            font-size: 18px;
+            font-weight: bold;
+            Margin-bottom: 12px;
+        }
+        .contents {
+            width: 100%;
+        }
+         
+        /* One column layout */
+        .one-column .contents {
+            text-align: left;
+        }
+        .one-column p {
+            font-size: 14px;
+            Margin-bottom: 10px;
+        }
 
-		html,
-		body,
-		form,
-		fieldset,
-		p,
-		div,
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			-webkit-text-size-adjust: none; 
-		}
+        /*Two column layout*/
+        .two-column {
+            text-align: center;
+            font-size: 0;
+        }
+        .two-column .column {
+            width: 100%;
+            vertical-align: top;
+            display: inline-block;
+            max-width: 300px;
+        }
+        .two-column .contents {
+            font-size: 14px;
+            text-align: left;
+        }
+        .two-column img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+        }
+        .two-column .text {
+            padding-top: 10px;
+        }
 
-		a,
-		a:link,
-		a:visited,
-		a:hover,
-		a:active {
-			color: #000000; text-decoration: none;
-		}
-		
-		table {
-			border-collapse: collapse;
-			mso-table-lspace: 0pt;
-			mso-table-rspace: 0pt;
-		}
-		
-		td {
-			mso-line-height-rule: exactly;
-		}
-		
-		@media only screen and (max-width: 599px) {  
-			table[class="wrapper"],
-			tr[class="wrapper"],
-			td[class="wrapper"] { 
-				max-width: 600px!important;
-				min-width: 300px!important;
-				width: 100%!important;
-			} 
-			table[class="hide"],
-			tr[class="hide"],
-			td[class="hide"] {
-				display: none!important; 
-			}
-			
-			table[class="expand"] {
-				width: 100%!important;
-			}
-			tr[class="expand"],
-			td[class="expand"] {
-				width: 100%!important;
-				float: left!important;
-				display: block!important;
-			}
-			td[class="mobile-full-width"] {
-				width: 100%!important;
-				display: block!important;
-			}
-			td[class="mobile-hide"] {
-				display: none!important;
-			}
-		}  
-		
-	</style>
+        /*Three column layout*/
+        .three-column {
+            text-align: center;
+            font-size: 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .three-column .column {
+            width: 100%;
+            display: inline-block;
+            vertical-align: top;
+            max-width: 200px;
+        }
+        .three-column .contents {
+            font-size: 14px;
+            text-align: center;
+        }
+        .three-column img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+        }
+        .three-column .text {
+            padding-top: 10px;
+        }
+    
+    /*Media Queries*/
+
+    @media screen and (min-width: 401px) and (max-width: 620px) {
+        .three-column .column {
+            max-width: 33% !important;
+        }
+        .two-column .column {
+            max-width: 50% !important;
+        }
+    }
+
+     @media screen and (min-width: 620px) { 
+        .two-column .column {
+            max-width: 300px !important;
+        }
+        .three-column .column {
+            max-width: 200px !important;
+        }
+        .two-column img  {
+            max-width: 280px !important;
+        }
+        .three-column img  {
+            max-width: 180px !important;
+        }
+     }
+
+    </style>
+    <!--[if (gte mso 9)|(IE)]>
+    <style type="text/css">
+        table {border-collapse: collapse;}
+    </style>
+    <![endif]-->
 </head>
+<body>
+    <center class="wrapper">
+        <div class="webkit">
+            
+            <!-- Structural Outer Container -->
 
-<body style="margin:0; padding: 0px; -webkit-text-size-adjust:none;">
-<table class="ee_mobiletemplate" cellspacing="0" cellpadding="0" border="0" width="100%">   
-    <tr>
-        <td>
-        	
-        	<!--Main-->
-            <table class="wrapper" cellspacing="0" cellpadding="0" border="0" width="600" align="center">                 
+            <!--[if (gte mso 9)|(IE)]>
+            <table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+            <td>
+            <![endif]-->
+            <table class="outer" align="center" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                    <td class="wrapper" width="600" valign="top">
-                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
-							
-							<!--Preheader row-->
-							<tr>
-                            	<td width="4%" height="10" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-                                <td width="92%" height="10" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-                                <td width="4%" height="10" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-                            </tr> 
-                            <tr>
-                            	<td width="4%"></td>
-                                <td width="92%" valign="top" style="font-family: Arial, sans-serif; font-size:13px; line-height: 13px; color:#666666;">
-                                	If you are having trouble reading this message, please click <a href="#" target="_blank" style="font-family: Arial, sans-serif; font-size:11px; font-weight:bold; color:#666666;">here</a>.
-                                </td>
-                                <td width="4%"></td>
-                            </tr>
-                            <tr>
-                            	<td width="4%" height="10" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-                                <td width="92%" height="10" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-                                <td width="4%" height="10" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-                            </tr>  
-                            <!--./Preheader row-->
-
-                            <!--Header row-->
-                            <tr>
-                            	<td width="4%"></td>
-                                <td width="92%" valign="top">
-                                	<img src="http://placehold.it/600x300" alt="**email hero image**" width="100%" alt="" border="0" style="display:block; width:100%;">
-                                </td>
-                                <td width="4%"></td>
-                            </tr> 
-                            <!--./Header row-->
-
-                            <!--Content row-->
-                            <tr>
-                            	<td width="4%" height="20" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-                                <td width="92%" height="20" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-                                <td width="4%" height="20" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-                            </tr> 
-                            <tr>
-                            	<td width="4%"></td>
-                                <td width="92%" valign="top" style="font-family: Arial, sans-serif; font-size:20px; line-height: 20px; color:#000000;">
-                                	Responsive email template
-                                </td>
-                                <td width="4%"></td>
-                            </tr>
-							<tr>
-                            	<td width="4%" height="10" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-                                <td width="92%" height="10" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-                                <td width="4%" height="10" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-                            </tr> 
-                            <tr>
-                            	<td width="4%"></td>
-                                <td width="92%" valign="top" style="font-family: Arial, sans-serif; font-size:13px; line-height: 16px; color:#666666;">
-                                	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </td>
-                                <td width="4%"></td>
-                            </tr>
-                            <tr>
-                            	<td width="4%" height="20" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-                                <td width="92%" height="20" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-                                <td width="4%" height="20" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-                            </tr> 
-                            <tr>
-                            	<td width="4%"></td>
-                                <td width="92%">
-                                	<table cellspacing="0" cellpadding="0" border="0" width="100%">
-                                		<tr>
-                                			<td width="48%" valign="top" class="mobile-full-width">
-                                				<table cellspacing="0" cellpadding="0" border="0" width="100%">
-                                					<tr>
-                            							<td width="100%" valign="top">
-						                                	<a href="#" target="_blank">
-                            									<img src="http://placehold.it/300x200" alt="**email promo image**" width="100%" alt="" border="0" style="display:block; width:100%; max-width:100%;">
-                            								</a>
-						                                </td>
-                                					</tr>
-                                					<tr>
-						                                <td width="100%" height="10" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-						                            </tr>
-						                            <tr>
-						                            	<td width="100%" valign="top" style="font-family: Arial, sans-serif; font-size:13px; line-height: 16px; color:#666666;">
-						                                	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-						                                </td>
-						                            </tr>
-						                            <tr>
-						                                <td width="100%" height="10" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-						                            </tr>
-						                            <tr>
-						                            	<td width="100%" valign="top" style="font-family: Arial, sans-serif; font-size:13px; line-height: 16px; color:#666666;">
-						                                	<a href="#" target="_blank" style="font-family: Arial, sans-serif; font-size:13px; line-height: 16px; color:#256F9C;">Read More →</a>
-						                                </td>
-						                            </tr>
-						                            <tr>
-						                                <td width="100%" height="10" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-						                            </tr>
-                                				</table>
-                                			</td>
-                                			<td width="4%" class="mobile-hide"></td>
-                                			<td width="48%" valign="top" class="mobile-full-width">
-                                				<table cellspacing="0" cellpadding="0" border="0" width="100%">
-                                					<tr>
-                            							<td width="100%" valign="top">
-                            								<a href="#" target="_blank">
-                            									<img src="http://placehold.it/300x200" alt="**email promo image**" width="100%" alt="" border="0" style="display:block; width:100%; max-width:100%;">
-                            								</a>
-						                                </td>
-                                					</tr>
-                                					<tr>
-						                                <td width="100%" height="10" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-						                            </tr>
-						                            <tr>
-						                            	<td width="100%" valign="top" style="font-family: Arial, sans-serif; font-size:13px; line-height: 16px; color:#666666;">
-						                                	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-						                                </td>
-						                            </tr>
-						                            <tr>
-						                                <td width="100%" height="20" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-						                            </tr>
-						                            <tr>
-						                            	<td width="100%" valign="top" style="font-family: Arial, sans-serif; font-size:13px; line-height: 16px; color:#666666;">
-						                                	<a href="#" target="_blank" style="font-family: Arial, sans-serif; font-size:13px; line-height: 16px; color:#256F9C;">Read More →</a>
-						                                </td>
-						                            </tr>
-						                            <tr>
-						                                <td width="100%" height="20" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-						                            </tr>
-                                				</table>
-                                			</td>
-                                		</tr>
-                                	</table>
-                                </td>
-                                <td width="4%"></td>
-                            </tr>
-
-                            <tr>
-                            	<td width="4%" height="20" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-                                <td width="92%" height="20" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-                                <td width="4%" height="20" style="font-size:1px; line-height: 1px;" valign="top">&nbsp;</td>
-                            </tr>  
-                            <!--./Content row-->
-
-                       </table>
+                    
+                    <!-- Full-width Banner Image -->
+                    <td class="full-width-image">
+                        <img src="http://placehold.it/600x300" width="600" alt="" />
                     </td>
+                    <!-- Full-width Banner Image -->
+                    
+                    <!-- Single Column Layout -->
+                    <tr>
+                        <td class="one-column">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td class="inner contents">
+                                        <p class="h1">Lorem ipsum dolor sit amet</p>
+                                        <p>Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Single Column Layout -->
+
+                    <!-- Two-column Layout -->
+                    <tr>
+                        <td class="two-column">
+                            <!--[if (gte mso 9)|(IE)]>
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                            <td width="50%" valign="top">
+                            <![endif]-->
+                            <div class="column">
+                                <table width="100%">
+                                    <tr>
+                                        <td class="inner">
+                                            <table class="contents">
+                                                <tr>
+                                                    <td>
+                                                        <img src="http://placehold.it/280x280" width="280" alt="" style="width: 100%;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text">
+                                                        Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if (gte mso 9)|(IE)]>
+                            </td>
+                            <td width="50%" valign="top">
+                            <![endif]-->
+                            <div class="column">
+                                <table width="100%">
+                                    <tr>
+                                        <td class="inner">
+                                            <table class="contents">
+                                                <tr>
+                                                    <td>
+                                                        <img src="http://placehold.it/280x280" width="280" alt="" style="width: 100%;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text">
+                                                        Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if (gte mso 9)|(IE)]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                    <!-- Two-column Layout -->
+
+                    <!-- Three-column Layout -->
+                    <tr>
+                        <td class="three-column">
+                            <!--[if (gte mso 9)|(IE)]>
+                            <table width="100%">
+                            <tr>
+                            <td width="200" valign="top">
+                            <![endif]-->
+                            <div class="column">
+                                <table width="100%">
+                                    <tr>
+                                        <td class="inner">
+                                            <table class="contents">
+                                                <tr>
+                                                    <td>
+                                                        <img src="http://placehold.it/180x180" width="180" alt="" style="width: 100%;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text">
+                                                        Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if (gte mso 9)|(IE)]>
+                            </td><td width="200" valign="top">
+                            <![endif]-->
+                            <div class="column">
+                                <table width="100%">
+                                    <tr>
+                                        <td class="inner">
+                                            <table class="contents">
+                                                <tr>
+                                                    <td>
+                                                        <img src="http://placehold.it/180x180" width="180" alt="" style="width: 100%;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text">
+                                                        Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if (gte mso 9)|(IE)]>
+                            </td><td width="200" valign="top">
+                            <![endif]-->
+                            <div class="column">
+                                <table width="100%">
+                                    <tr>
+                                        <td class="inner">
+                                            <table class="contents">
+                                                <tr>
+                                                    <td>
+                                                        <img src="http://placehold.it/180x180" width="180" alt="" style="width: 100%;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text">
+                                                        Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if (gte mso 9)|(IE)]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                    <!-- Three-column Layout -->
+
+
                 </tr>
             </table>
-            <!--./Main-->
-          
-		</td>
-	</tr>
-</table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+
+            <!-- Structural Outer Container -->
+
+        </div>
+    </center>
 </body>
 </html>
