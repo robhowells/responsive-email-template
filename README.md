@@ -32,6 +32,7 @@
 - Gmail - full
 - Yahoo - full
 
+##Support notes
 *Need to add support for retina images
 
 **Known bug with columns
